@@ -4,19 +4,20 @@ return {
     title          = "Rates",
     reboot         = false,
     eepromWrite    = true,
-    minBytes       = 16,
+    minBytes       = 28,
     yMinLimit      = 11,
     yMaxLimit      = 52,
     text = {
-        { t = "RC",         x = 43, y = 11,  to = SMLSIZE },
-        { t = "Rate",       x = 38, y = 18,  to = SMLSIZE },
-        { t = "Super",      x = 63, y = 11,  to = SMLSIZE },
-        { t = "Rate",       x = 66, y = 18,  to = SMLSIZE },
-        { t = "RC",         x = 99, y = 11,  to = SMLSIZE },
-        { t = "Expo",       x = 94, y = 18,  to = SMLSIZE },
-        { t = "ROLL",       x = 10, y = 26,  to = SMLSIZE },
-        { t = "PITCH",      x = 10, y = 36,  to = SMLSIZE },
-        { t = "YAW",        x = 10, y = 46,  to = SMLSIZE },
+        { t = "Rates Type", x = 10, y = 11, to = SMLSIZE },
+        { t = "RC",         x = 43, y = 18, to = SMLSIZE },
+        { t = "Rate",       x = 38, y = 25, to = SMLSIZE },
+        { t = "Super",      x = 63, y = 18, to = SMLSIZE },
+        { t = "Rate",       x = 66, y = 25, to = SMLSIZE },
+        { t = "RC",         x = 99, y = 18, to = SMLSIZE },
+        { t = "Expo",       x = 94, y = 25, to = SMLSIZE },
+        { t = "ROLL",       x = 10, y = 33, to = SMLSIZE },
+        { t = "PITCH",      x = 10, y = 43, to = SMLSIZE },
+        { t = "YAW",        x = 10, y = 53, to = SMLSIZE },
 
         { t = "Throttle",   x = 10, y = 60,  to = SMLSIZE },
         { t = "Mid",        x = 20, y = 68,  to = SMLSIZE },
@@ -40,38 +41,24 @@ return {
 
     },
     fields = {
+        -- Rates Type
+        { x = 87, y = 11, vals = { 1 }, min = 0, max = 3, to = SMLSIZE, table = { "BETAFLIGHT", "RACEFLIGHT", "KISS", "ACTUAL" } },
         -- RC Rates
-        { x = 39, y = 26,  vals = { 1 },     min = 0,    max = 255, scale = 100, to = SMLSIZE },
-        { x = 39, y = 36,  vals = { 13 },    min = 0,    max = 255, scale = 100, to = SMLSIZE },
-        { x = 39, y = 46,  vals = { 12 },    min = 0,    max = 255, scale = 100, to = SMLSIZE },
+        { x = 39, y = 33, vals = { 2 }, min = 0, max = 255, scale = 100, to = SMLSIZE }, -- Roll
+        { x = 39, y = 43, vals = { 14 }, min = 0, max = 255, scale = 100, to = SMLSIZE }, -- Pitch
+        { x = 39, y = 53, vals = { 13 }, min = 0, max = 255, scale = 100, to = SMLSIZE }, -- Yaw
         -- Super Rates
-        { x = 66, y = 26,  vals = { 3 },     min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 66, y = 36,  vals = { 4 },     min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 66, y = 46,  vals = { 5 },     min = 0,    max = 255, scale = 100, to = SMLSIZE },
+        { x = 66, y = 33, vals = { 4 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Roll
+        { x = 66, y = 43, vals = { 5 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Pitch
+        { x = 66, y = 53, vals = { 6 }, min = 0, max = 255, scale = 100, to = SMLSIZE }, -- Yaw
         -- RC Expo
-        { x = 94, y = 26,  vals = { 2 },     min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 94, y = 36,  vals = { 14 },    min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 94, y = 46,  vals = { 11 },    min = 0,    max = 100, scale = 100, to = SMLSIZE },
+        { x = 94, y = 33, vals = { 3 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Roll
+        { x = 94, y = 43, vals = { 15 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Pitch
+        { x = 94, y = 53, vals = { 12 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Yaw
         -- Throttle
-        { x = 70, y = 68,  vals = { 7 },     min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 70, y = 76,  vals = { 8 },     min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 70, y = 84,  vals = { 15 },    min = 0,    max = 2,   to = SMLSIZE, table = { [0] = "OFF", "SCALE", "CLIP" } },
-        { x = 70, y = 92,  vals = { 16 },    min = 25,   max = 100, to = SMLSIZE },
+        { x = 70, y = 75, vals = { 8 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Mid
+        { x = 70, y = 83, vals = { 9 }, min = 0, max = 100, scale = 100, to = SMLSIZE }, -- Expo
         -- TPA
-        -- { x = 70, y = 108, vals = { 6 } ,    min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        -- { x = 70, y = 116, vals = { 7 } ,    min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        -- { x = 70, y = 124, vals = { 8 } ,    min = 0,    max = 100, scale = 100, to = SMLSIZE },
-        { x = 70, y = 108, vals = { 9, 10 }, min = 1000, max = 2000, to = SMLSIZE },
-        -- Rate Dynamics
-	-- Rate Sensitivity
-        { x = 39, y = 140,  vals = { 21 },     min = 0,    max = 100, scale = 1, to = SMLSIZE },
-        { x = 39, y = 148,  vals = { 22 },    min = 0,    max = 100, scale = 1, to = SMLSIZE },
-	-- Rate Correction
-        { x = 70, y = 140,  vals = { 23 },     min = 0,    max = 100, scale = 1, to = SMLSIZE },
-        { x = 70, y = 148,  vals = { 24 },     min = 0,    max = 100, scale = 1, to = SMLSIZE },
-	-- Rate Weight
-        { x = 94, y = 140,  vals = { 25 },     min = 0,    max = 100, scale = 1, to = SMLSIZE },
-        { x = 94, y = 148,  vals = { 26 },    min = 0,    max = 100, scale = 1, to = SMLSIZE },
-
+        { x = 70, y = 99, vals = { 10, 11 }, min = 1000, max = 2000, to = SMLSIZE }, -- Breakpoint
     },
 }

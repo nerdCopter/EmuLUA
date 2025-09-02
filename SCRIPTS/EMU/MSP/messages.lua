@@ -1,7 +1,7 @@
 MSP_PID_FORMAT = {
    read           = 112, -- MSP_PID
    write          = 202, -- MSP_SET_PID
-   minBytes       = 8,
+   minBytes       = 9,
    fields = {
       -- P
       { vals = { 1 } },
@@ -14,6 +14,7 @@ MSP_PID_FORMAT = {
       -- D
       { vals = { 3 } },
       { vals = { 6 } },
+      { vals = { 9 } },
    },
 }
 
