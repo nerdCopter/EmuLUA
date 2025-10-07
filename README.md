@@ -1,8 +1,9 @@
+# EmuLua for EmuFlight 0.4.3
 
-# broken / not updated, please do not use
+This script is updated to work with **EmuFlight 0.4.3 ONLY**. Due to changes in the MSP protocol, it is not compatible with older versions of EmuFlight.
 
 ## EmuLua
-lua script for controller X9/X7/Xlite ...
+LUA script for radio controllers like FrSky X9/X7/X-Lite, Jumper T16, and other OpenTX/EdgeTX compatible radios.
 
-* credit to Shikijo Petrosk for EmuFlight modifications
-* credit to original work from klutvott123 .
+*   credit to Shikijo Petrosk for EmuFlight modifications
+*   credit to original work from klutvott123 .
